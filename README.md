@@ -1,6 +1,6 @@
 # How to run
 ```
-git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/poc_docker_dev2prod
+git clone https://github.com/BADRKAC/Dockerise-SpringBoot-Mysql.git
 cd poc_docker_dev2prod
 mvn clean package
 docker pull mysq
