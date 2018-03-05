@@ -1,9 +1,9 @@
 # How to run
 ```
-git clone https://github.com/BADRKAC/Dockerise-SpringBoot-Mysql.git
+git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/poc_docker_dev2prod
 cd poc_docker_dev2prod
 mvn clean package
-docker pull mysq
+docker pull mysql:5.6
 docker run --name mysql-standalone -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test -e MYSQL_USER=sa -e MYSQL_PASSWORD=password -d mysql:5.6
 docker build . -t users-mysql
 docker run -p 8084:8084 --name users-mysql --link mysql-standalone:mysql -d users-mysql
@@ -11,10 +11,18 @@ docker logs --follow users-mysql
 ```
 
 # Test in browser
+Get your ip {{your IP Machine}} using
 ```
-docker-machine ip -->your IP Machine 
+docker-machine ip
 ```
-Url : your_IP_Machine:8084/all/stagiaires
+and test 
+Url : http://{{your IP Machine}}:8084/all/stagiaires
+
+Result :
+```
+[{"id":1,"name":"BADR","salary":3400,"teamName":"GRP"}]
+```
+
 # Description
 
 1- MVN package
