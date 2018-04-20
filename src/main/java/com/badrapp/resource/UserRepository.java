@@ -1,4 +1,4 @@
-package com.techprimers.jpa.springdatajpahibernateexample.resource;
+package com.badrapp.resource;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
